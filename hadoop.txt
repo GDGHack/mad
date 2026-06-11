@@ -1,0 +1,20 @@
+I. To start WSL
+Search for wsl in search box and Click on Run as administrator
+II. To start the Hadoop
+1. Login as hduser and change the directory
+su hduser
+cd
+2. Remove the Metastore Database Files
+rm -rf metastore_db
+3. Format the datanode and namenode in HDFS
+rm -rf /usr/local/hadoop_store/hdfs/datanode/*
+hadoop namenode –format
+4. Start the Hadoop
+start-all.sh
+5. Check all demons of Hadoop are running or not
+jps
+III. To start the Hive
+$HIVE_HOME/bin/schematool -dbType derby –initSchema
+hive
+IV. To start the Pig in local mode
+pig -x local
